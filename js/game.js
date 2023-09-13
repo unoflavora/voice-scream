@@ -84,7 +84,7 @@ FillyFoly.Game.prototype = {
         
         // Button
         // this.profileButton = this.game.add.button(this.game.width - 140, 15, 'button-profile', goToProfile, this);
-        this.exitButton = this.game.add.button(this.game.width - 70, 15, 'button-exit', OpenPopUpLogout, this);
+        // this.exitButton = this.game.add.button(this.game.width - 70, 15, 'button-exit', OpenPopUpLogout, this);
 
         // Debug text
         //this.game.add.text(16, 64, 'Debug: ', { fontSize: '24px', fill: '#FFF' });
@@ -515,24 +515,7 @@ FillyFoly.Game.prototype = {
 }
 
 function sendScore(score){
-
     return;
-
-    score = Math.floor(score);
-    
-    // id sulit diubah dari app, mungkin sebaiknya di autoincrement sehingga tidak perlu di input (from rookie web app developer)
-    $.ajax({
-        type: 'GET',
-        url: 'https://bigbabol.otesuto.com/api/submitscore?id=123&score=' + score,
-        dataType: 'json',
-        
-        success: function(data){
-            console.log('Success!');
-        },
-        error: function(errorThrown){
-            console.log('Failed!');
-        }
-    });
 }
 
 function restartGame() {
@@ -557,6 +540,8 @@ function goToProfile() {
 }
 
 function shareFB() {
+    return;
+
     // using fb dialog
     //FB.ui({
     //    method: 'feed',
@@ -564,18 +549,20 @@ function shareFB() {
     //}, function(response){});
 
     // using sharer.php
-    let uri = 'https://www.facebook.com/sharer/sharer.php?u=https://bigbabol.otesuto.com';
-    window.open(uri);
+    // let uri = 'https://www.facebook.com/sharer/sharer.php?u=https://bigbabol.otesuto.com';
+    // window.open(uri);
 }
 
 function tweet(message) {
-    let uri = 'https://twitter.com/intent/tweet';
-    // if both message and hashtags are to be passed
-    if(typeof(message) === 'string') {
-        uri += '?text=' + message;
-    }
-    // open the new window
-    window.open(uri);
+    return;
+
+    // let uri = 'https://twitter.com/intent/tweet';
+    // // if both message and hashtags are to be passed
+    // if(typeof(message) === 'string') {
+    //     uri += '?text=' + message;
+    // }
+    // // open the new window
+    // window.open(uri);
 }
 
 function shareTwitter() {
@@ -607,8 +594,8 @@ function OpenPopUpLogout() {
             var button2 = this.game.add.button(popupWindow.width/2, popupWindow.height/2 + 100,'button-backGame', restartGame, this);
             button2.anchor.set(.5);
 
-            var buttonClose = this.game.add.button(popupWindow.width/2 + 580, popupWindow.height/2 - 360,'button-close', closePopUp, this);
-            buttonClose.anchor.set(0.5);
+            // var buttonClose = this.game.add.button(popupWindow.width/2 + 580, popupWindow.height/2 - 360,'button-close', closePopUp, this);
+            // buttonClose.anchor.set(0.5);
         }
 
         else {
@@ -631,14 +618,14 @@ function OpenPopUpLogout() {
             var button2 = this.game.add.button(popupWindow.width/2, popupWindow.height/2 + 60,'button-backGame', restartGame, this);
             button2.anchor.set(.5);
 
-            var buttonClose = this.game.add.button(popupWindow.width/2 + 250, popupWindow.height/2 - 380,'button-close', closePopUp, this);
-            buttonClose.anchor.set(0.5);
+            // var buttonClose = this.game.add.button(popupWindow.width/2 + 250, popupWindow.height/2 - 380,'button-close', closePopUp, this);
+            // buttonClose.anchor.set(0.5);
         }
 
         popupWindow.addChild(loseText);
         popupWindow.addChild(loseText2);
         // popupWindow.addChild(button1);
         popupWindow.addChild(button2);
-        popupWindow.addChild(buttonClose);
+        // popupWindow.addChild(buttonClose);
     }
 }
