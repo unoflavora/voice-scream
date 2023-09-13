@@ -447,8 +447,8 @@ FillyFoly.Game.prototype = {
             var button2 = this.game.add.button(popupWindow.width/2, popupWindow.height/2 + 100,'button-backGame', restartGame, this);
             button2.anchor.set(.5);
 
-            var buttonClose = this.game.add.button(popupWindow.width/2 + 580, popupWindow.height/2 - 360,'button-close', closePopUp, this);
-            buttonClose.anchor.set(0.5);
+            // var buttonClose = this.game.add.button(popupWindow.width/2 + 580, popupWindow.height/2 - 360,'button-close', closePopUp, this);
+            // buttonClose.anchor.set(0.5);
 
             var buttonSoc1 = this.game.add.button(popupWindow.width/2 - 50, popupWindow.height/2 + 280,'button-twitter', shareTwitter, this);
             // button1.anchor.set(0.5);
@@ -486,8 +486,8 @@ FillyFoly.Game.prototype = {
             var button2 = this.game.add.button(popupWindow.width/2, popupWindow.height/2 + 60,'button-backGame', restartGame, this);
             button2.anchor.set(.5);
 
-            var buttonClose = this.game.add.button(popupWindow.width/2 + 250, popupWindow.height/2 - 380,'button-close', closePopUp, this);
-            buttonClose.anchor.set(0.5);
+            // var buttonClose = this.game.add.button(popupWindow.width/2 + 250, popupWindow.height/2 - 380,'button-close', closePopUp, this);
+            // buttonClose.anchor.set(0.5);
 
             var buttonSoc1 = this.game.add.button(popupWindow.width/2 - 50, popupWindow.height/2 + 330,'button-twitter', shareTwitter, this);
             // button1.anchor.set(0.5);
@@ -501,7 +501,7 @@ FillyFoly.Game.prototype = {
         popupWindow.addChild(loseScore);
         // popupWindow.addChild(button1);
         popupWindow.addChild(button2);
-        popupWindow.addChild(buttonClose);
+        // popupWindow.addChild(buttonClose);
         popupWindow.addChild(buttonSoc1);
         popupWindow.addChild(buttonSoc2);
 
@@ -523,6 +523,8 @@ function restartGame() {
 }
 
 function closePopUp(popupWindow) {
+    return;
+
     popupWindow.parent.destroy();
     if (!FillyFoly.gameOver)
         this.isPaused = false;
